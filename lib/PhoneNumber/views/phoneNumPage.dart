@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PhoneNumPage extends StatefulWidget {
-  const PhoneNumPage({super.key});
+  const PhoneNumPage({Key? key}) : super(key: key);
 
   @override
   State<PhoneNumPage> createState() => _PhoneNumPageState();

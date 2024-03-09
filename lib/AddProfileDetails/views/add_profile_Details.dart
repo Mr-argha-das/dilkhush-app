@@ -16,7 +16,7 @@ class _AddProfileDetailsState extends State<AddProfileDetails> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _mobileController = TextEditingController();
-  final _dobController = TextEditingController();
+  // final _dobController = TextEditingController();
   final _cityController = TextEditingController();
 
   @override
@@ -173,7 +173,7 @@ class _AddProfileDetailsState extends State<AddProfileDetails> {
                     child: TextFormField(
                       initialValue:
                           "${dateTime.day}-${dateTime.month}-${dateTime.year}",
-                      controller: _dobController,
+                      // controller: _dobController,
                       decoration: InputDecoration(
                         suffixIcon: InkWell(
                             onTap: () async {

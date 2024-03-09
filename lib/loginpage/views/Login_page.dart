@@ -1,3 +1,4 @@
+import 'package:dating_app/PhoneNumber/views/phoneNumPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -62,7 +63,9 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, CupertinoPageRoute(builder: (context) => const PhoneNumPage()));
+            },
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,

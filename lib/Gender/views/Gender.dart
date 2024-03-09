@@ -1,14 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Gender_page extends StatefulWidget {
-  const Gender_page({Key? key}) : super(key: key);
+class Genderpage extends StatefulWidget {
+  const Genderpage({Key? key}) : super(key: key);
 
   @override
-  State<Gender_page> createState() => _Gender_pageState();
+  State<Genderpage> createState() => _GenderpageState();
 }
 
-class _Gender_pageState extends State<Gender_page> {
+class _GenderpageState extends State<Genderpage> {
+  bool male = false;
+  bool femail = false;
+  bool otherGernder = false;
+
+  selectMale(){
+    setState(() {
+      male = true;
+      femail = false;
+      otherGernder = false;
+    });
+  }
+   selectFemale(){
+    setState(() {
+      male = false;
+      femail = true;
+      otherGernder = false;
+    });
+  }
+
+   selectOther(){
+    setState(() {
+      male = false;
+      femail = false;
+      otherGernder = true;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +46,7 @@ class _Gender_pageState extends State<Gender_page> {
             height: 70,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(left: 20),
             child: Text(
               "Select Gender",
               style: GoogleFonts.lato(
@@ -32,7 +58,7 @@ class _Gender_pageState extends State<Gender_page> {
           // ignore: avoid_unnecessary_containers
           Container(
             child: Padding(
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 20),
               child: Text(
                 "I am looking for...",
                 style: GoogleFonts.lato(
@@ -53,28 +79,32 @@ class _Gender_pageState extends State<Gender_page> {
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
                   elevation: 5,
-                  child: Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 255, 185, 182),
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.red)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Icon(
-                            Icons.male_outlined,
-                            color: Colors.red,
-                            size: 40,
-                          ),
-                          Text(
-                            "Male",
-                            style: GoogleFonts.lato(color: Colors.red),
-                          ),
-                        ],
-                      )),
+                  child: GestureDetector(
+                    onTap: () => selectMale(),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                            color: male? const Color.fromARGB(255, 255, 185, 182) :Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.red)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.male_outlined,
+                              color: Colors.red,
+                              size: 40,
+                            ),
+                            Text(
+                              "Male",
+                              style: GoogleFonts.lato(color: Colors.red),
+                            ),
+                          ],
+                        )),
+                  ),
                 ),
               ),
             ),
@@ -90,28 +120,34 @@ class _Gender_pageState extends State<Gender_page> {
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
                   elevation: 5,
-                  child: Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.red)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Icon(
-                            Icons.female_outlined,
-                            color: Colors.red,
-                            size: 40,
-                          ),
-                          Text(
-                            "Female",
-                            style: GoogleFonts.lato(color: Colors.red),
-                          ),
-                        ],
-                      )),
+                  child: GestureDetector(
+                    onTap: () => selectFemale(),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                      child: Container(
+                          height: 100,
+                          width: 100,
+                          decoration: BoxDecoration(
+                              color: femail?const Color.fromARGB(255, 255, 185, 182): Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.red)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.female_outlined,
+                                color: Colors.red,
+                                size: 40,
+                              ),
+                              Text(
+                                "Female",
+                                style: GoogleFonts.lato(color: Colors.red),
+                              ),
+                            ],
+                          )),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -126,28 +162,34 @@ class _Gender_pageState extends State<Gender_page> {
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
                   elevation: 5,
-                  child: Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.red)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Icon(
-                            Icons.transgender_outlined,
-                            color: Colors.red,
-                            size: 40,
-                          ),
-                          Text(
-                            "Other",
-                            style: GoogleFonts.lato(color: Colors.red),
-                          ),
-                        ],
-                      )),
+                  child: GestureDetector(
+                    onTap: () => selectOther(),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                      child: Container(
+                          height: 100,
+                          width: 100,
+                          decoration: BoxDecoration(
+                              color: otherGernder?const Color.fromARGB(255, 255, 185, 182): Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.red)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.transgender_outlined,
+                                color: Colors.red,
+                                size: 40,
+                              ),
+                              Text(
+                                "Other",
+                                style: GoogleFonts.lato(color: Colors.red),
+                              ),
+                            ],
+                          )),
+                    ),
+                  ),
                 ),
               ),
             ),

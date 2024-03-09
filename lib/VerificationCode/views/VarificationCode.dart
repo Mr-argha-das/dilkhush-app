@@ -1,3 +1,5 @@
+import 'package:dating_app/AddProfileDetails/views/add_profile_Details.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -141,8 +143,14 @@ class _VarificationCodeState extends State<VarificationCode> {
             const SizedBox(
               height: 40,
             ),
-            TextButton(
-                onPressed: () {},
+            
+          ],
+        ),
+      ),
+      bottomSheet: TextButton(
+                onPressed: () {
+                  Navigator.push(context, CupertinoPageRoute(builder: (context) => AddProfileDetails()));
+                },
                 child: Container(
                   height: 50,
                   width: 400,
@@ -155,9 +163,6 @@ class _VarificationCodeState extends State<VarificationCode> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   )),
                 )),
-          ],
-        ),
-      ),
     );
   }
 }

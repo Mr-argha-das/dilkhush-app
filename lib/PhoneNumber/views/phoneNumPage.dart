@@ -1,3 +1,5 @@
+import 'package:dating_app/VerificationCode/views/VarificationCode.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,14 +16,14 @@ class _PhoneNumPageState extends State<PhoneNumPage> {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
             height: 170,
             width: 20,
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 100),
+            padding: const EdgeInsets.only(left: 13),
             child: Text(
               "Enter Phone Number",
               style: GoogleFonts.lato(
@@ -65,8 +67,13 @@ class _PhoneNumPageState extends State<PhoneNumPage> {
           const SizedBox(
             height: 40,
           ),
-          TextButton(
-              onPressed: () {},
+          
+        ],
+      ),
+      bottomSheet: TextButton(
+              onPressed: () {
+                Navigator.push(context, CupertinoPageRoute(builder: (context) => VarificationCode()));
+              },
               child: Container(
                 height: 50,
                 width: 400,
@@ -78,8 +85,6 @@ class _PhoneNumPageState extends State<PhoneNumPage> {
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 )),
               )),
-        ],
-      ),
     );
   }
 }

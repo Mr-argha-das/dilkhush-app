@@ -147,7 +147,7 @@ class _VarificationCodeState extends State<VarificationCode> {
                   height: 50,
                   width: 400,
                   decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: const Color.fromARGB(255, 238, 99, 90),
                       borderRadius: BorderRadius.circular(10)),
                   child: const Center(
                       child: Text(

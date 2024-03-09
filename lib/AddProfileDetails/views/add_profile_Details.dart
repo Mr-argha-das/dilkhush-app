@@ -216,7 +216,7 @@ class _AddProfileDetailsState extends State<AddProfileDetails> {
                     height: 60,
                     width: 420,
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: const Color.fromARGB(255, 238, 99, 90),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Center(

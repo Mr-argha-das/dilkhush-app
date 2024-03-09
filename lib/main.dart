@@ -1,4 +1,5 @@
 import 'package:dating_app/AddProfileDetails/views/add_profile_Details.dart';
+import 'package:dating_app/Gender/views/Gender.dart';
 import 'package:dating_app/PhoneNumber/views/phoneNumPage.dart';
 import 'package:dating_app/VerificationCode/views/VarificationCode.dart';
 import 'package:dating_app/loginpage/views/Login_page.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AddProfileDetails(),
+      home: Gender_page(),
     );
   }
 }

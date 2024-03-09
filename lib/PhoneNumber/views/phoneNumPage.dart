@@ -17,7 +17,7 @@ class _PhoneNumPageState extends State<PhoneNumPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(
-            height: 250,
+            height: 170,
             width: 20,
           ),
           Padding(
@@ -43,8 +43,41 @@ class _PhoneNumPageState extends State<PhoneNumPage> {
                   fontWeight: FontWeight.w500,
                   color: Colors.grey),
             ),
-            
           ),
+          const SizedBox(
+            height: 50,
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.red),
+                  color: const Color.fromARGB(255, 252, 252, 252),
+                  borderRadius: BorderRadius.circular(10)),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 14, horizontal: 200),
+              child: const Text(
+                "",
+                style: TextStyle(color: Color.fromARGB(255, 7, 7, 7)),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          TextButton(
+              onPressed: () {},
+              child: Container(
+                height: 50,
+                width: 400,
+                decoration: BoxDecoration(
+                    color: Colors.red, borderRadius: BorderRadius.circular(10)),
+                child: const Center(
+                    child: Text(
+                  "Continue",
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                )),
+              )),
         ],
       ),
     );
